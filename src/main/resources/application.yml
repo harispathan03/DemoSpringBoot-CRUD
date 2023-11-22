@@ -3,7 +3,7 @@ server:
 
 spring:
   profiles:
-    active: dev
+    active: qa
 ---
 
 spring:
@@ -33,6 +33,13 @@ spring:
     hibernate:
       ddl-auto: update
     show-sql: true
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+        exclude: "env,beans"
 
 ---
 
